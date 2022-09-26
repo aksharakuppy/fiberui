@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FiberUI --Online, Live Code Editor</title>
+  <meta name="description" content="This is an online code editor for html css and javascript. ">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="FiberUI">
+  <link rel="icon" type="image/x-icon" href="/fiberuifav.png">
+  <meta name="keywords" content="Live code editor, online code editor, live html editor, live css editor, live javascript editor">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  
+  <div class="header-wrap">
+    <img src="fiberui.png" alt="FiberUi" srcset="" width="150px">
+    <h1>Live, Online Code Editor</h1>
+    <h4>Smart Editor with different features!</h4>
+    
+  </div>
+
+  <div class="container-md">
+    <!-- Content here -->
+    <div style="display: flex;justify-content: center;">
+      <h5>Tools</h5>
+    </div>
+    <div class="card" style="margin: 5px;">
+      <div class="card-body">
+        <div class="container-sm" style="padding: 5px;">
+          <div class="container text-center">
+            
+          <button type="button" class="btn btn-primary" onclick="day_night()""><i class="bi bi-sun"></i></button>
+          <button type="button" class="btn btn-primary" onclick="btn3()">Dummy HTML</button>
+          <button type="button" class="btn btn-primary" onclick="btn1()">Bootstrap Dummy HTML</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#BootstraptoolModal">Bootstrap Tools</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#toolModal">Tools Jquery/cdn</button>
+
+            <div class="row align-items-start" style="
+            padding: 10px;
+        ">
+              
+              <div class="col">
+                
+              </div>
+              <div class="col">
+                
+              </div>
+              <div class="col">
+                <div class="input-group mb-3" style="
+                width: 450px;
+            ">
+                  <button type="button" id="downreplaybtn" class="btn btn-primary"><i class="bi bi-caret-down-fill"></i></button>
+                  <input type="text" id="searchquery" class="form-control" placeholder="Find" aria-label="Search" aria-describedby="basic-addon2">
+                  <button type="button" class="input-group-text" id="fundnow" style="
+                  background-color: #0d6efd;
+                  color: white;
+              ">Search</button>
+                  <div class="btn-group" role="group" aria-label="Basic example" style="
+                  padding-left: 5px;
+              ">
+                    <button type="button" id="fleftbtn" class="btn btn-primary"><i class="bi bi-chevron-bar-left"></i></button>
+                    <button type="button" id="frightbtn" class="btn btn-primary"><i class="bi bi-chevron-bar-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-start" style="
+            padding: 10px;
+            margin-top: -30px;
+        ">
+              <div class="col">
+                
+              </div>
+              <div class="col">
+                
+              </div>
+              <div class="col" id="replaceclass" style="display:none ;">
+                <div class="input-group mb-3" style="
+                width: 450px;
+            ">
+                  <input type="text" id="replacequery" class="form-control" placeholder="Replace" aria-label="Search" aria-describedby="basic-addon2">
+                  <button type="button" class="input-group-text" id="replacenow" style="
+                  background-color: #0d6efd;
+                  color: white;
+              ">Replace</button>
+                  <div class="btn-group" role="group" aria-label="Basic example" style="
+                  padding-left: 5px;
+              ">
+                   
+                    <button type="button" id="replaceallbtn" class="btn btn-primary">Replace all</button>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+          
+  
+        
+  
+      </div>
+      </div>
+    </div>
+    
+
+    
+    
+  </div>
+
+  <!-- BootstapModal -->
+<div class="modal fade" id="BootstraptoolModal" tabindex="-1" aria-labelledby="BootstraptoolModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bootstrap Tools</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning" role="alert">
+Please place the cursor on which line you want to add the element before adding !
+        </div>
+        
+        <div class="container">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                
+                <select id="versionv" class="form-select" aria-label="Default select example">
+                  <option selected>Select Version</option>
+                  <option value="1">5.1v</option>
+                  
+                </select>
+              </div>
+              
+             
+              <div class="col" style="
+              text-align: left;
+              /* padding-right: -19px; */
+          ">
+                <button type="button" class="btn btn-primary" onclick="onsubversion()">Submit</button>
+             
+                 </div>
+              <div class="col">
+                
+              </div>
+            </div>
+
+            <div class="card" id="cardboot" aria-hidden="true" style="display: none ;">
+              <div class="card-body">
+                <div class="col">
+                  <button type="button" class="btn btn-primary" id="Containersbtn">Containers</button>
+                  <button type="button" class="btn btn-primary" id="Gridbtn" >Grid</button>
+                  <button type="button" class="btn btn-primary" id="Columnsbtn" >Columns</button>
+                  <button type="button" class="btn btn-primary" id="Alertsbtn" >Alerts</button>
+                  
+                </div>
+                <div class="col" style="
+                padding-top: 3px;
+            ">
+                  <button type="button" class="btn btn-primary" id="Buttonbtn" >Buttons</button>
+                  <button type="button" class="btn btn-primary" id="Buttongroupbtn" >Button group</button>
+               
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+<div class="modal fade" id="toolModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">All Tools</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning" role="alert">
+          Please place the cursor on which line you want to add the element before adding !
+                  </div>
+        <div class="card">
+          <div class="card-body">
+            <button type="button" class="btn btn-primary" onclick="btn2()">Jquery cdn</button>
+            <button type="button" class="btn btn-primary" onclick="btn4()">Ajax cdn</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+  <div id="ide-parent">
+    <div id="button-wrapper">
+      <button onclick="switchPanel(0)">HTML</button>
+      <button onclick="switchPanel(1)">CSS</button>
+      <button onclick="switchPanel(2)">js</button>
+      <button onclick="runEdit(3)">Result</button>
+    </div>
+    <div id="ide-container">
+      <div class="panel-wrapper">
+        <div id="html">
+&lt;!--predefined html, but editable--&gt;
+&lt;h1&gt;Hello Welcome to FiberUI Editor"&lt;/h1&gt;
+&lt;button class="btn" onclick="onfun()"&gt;
+	click me!
+&lt;/button&gt;
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="css">
+/*predefined CSS, but editable*/
+.btn {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="js">
+//predefined JavaScript, but editable
+
+function onfun(){
+
+  alert("Clicked!");
+}
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <iframe id="result"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    
+	
+  </div>
+  <div class="footer">
+    <div class="inner-wrap">
+      <p>&#169; <span></span> FiberUI 2022</p>
+      <div class="icons-wrap">
+       
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var ht =  document.getElementById("html");
+
+  
+  </script>
+  <<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.11.1/ace.js" integrity="sha512-Xj+aDEioSoftmz378MJZFfIq6vbvt7Y3VxsRyEfMX/UtLWjgVEMT1ICljIwddIMhgVugDx+tn44hUYsiZ63z6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.11.1/ext-language_tools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
